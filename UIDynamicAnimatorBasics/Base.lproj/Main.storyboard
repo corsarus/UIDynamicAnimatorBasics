@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P13-vo-kvT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bouncing-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CCRBouncingBallViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFS-u8-es8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-GK-jju">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Drop ball">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dropBall:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ElN-aX-yz5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4aP-3d-uhm"/>
+                                    <constraint firstAttribute="centerX" secondItem="SJT-GK-jju" secondAttribute="centerX" id="B9B-nw-iYO"/>
+                                    <constraint firstAttribute="centerY" secondItem="SJT-GK-jju" secondAttribute="centerY" id="y6b-as-A14"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="SJT-GK-jju"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="4aP-3d-uhm"/>
+                                        <exclude reference="B9B-nw-iYO"/>
+                                        <exclude reference="y6b-as-A14"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="SJT-GK-jju"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="4aP-3d-uhm"/>
+                                        <include reference="B9B-nw-iYO"/>
+                                        <include reference="y6b-as-A14"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="iFS-u8-es8" secondAttribute="trailing" constant="-16" id="6Qw-gt-E8p"/>
+                            <constraint firstItem="iFS-u8-es8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="R0b-RA-aOL"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="iFS-u8-es8" secondAttribute="bottom" id="ysY-l2-aez"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="iFS-u8-es8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ysY-l2-aez"/>
+                                <exclude reference="6Qw-gt-E8p"/>
+                                <exclude reference="R0b-RA-aOL"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="iFS-u8-es8"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ysY-l2-aez"/>
+                                <include reference="6Qw-gt-E8p"/>
+                                <include reference="R0b-RA-aOL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bouncing" id="YnV-Rp-bnE"/>
+                    <connections>
+                        <outlet property="baseView" destination="iFS-u8-es8" id="J8L-6x-nPV"/>
+                        <outlet property="dropBallButton" destination="SJT-GK-jju" id="URe-M8-Ptq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340" y="444"/>
+        </scene>
+        <!--Attachment-->
+        <scene sceneID="vTk-NU-L4q">
+            <objects>
+                <viewController id="iJH-yR-nOF" customClass="CCRAttachmentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fvb-m1-KYo"/>
+                        <viewControllerLayoutGuide type="bottom" id="FmT-zw-yGE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bWA-Je-RnF" customClass="CCRCustomView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHo-ya-N0t">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6Wt-Oi-WZU"/>
+                                    <constraint firstAttribute="width" constant="100" id="Mhz-l1-LPy"/>
+                                </constraints>
+                                <state key="normal" title="Press">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Wt-Oi-WZU"/>
+                                        <exclude reference="Mhz-l1-LPy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6Wt-Oi-WZU"/>
+                                        <include reference="Mhz-l1-LPy"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="popAttachedBallViews:" destination="iJH-yR-nOF" eventType="touchUpInside" id="xMp-2z-aL0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fHo-ya-N0t" secondAttribute="centerX" id="Q5Y-jf-2CH"/>
+                            <constraint firstAttribute="centerY" secondItem="fHo-ya-N0t" secondAttribute="centerY" id="f4p-XZ-Eus"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="fHo-ya-N0t"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Q5Y-jf-2CH"/>
+                                <exclude reference="f4p-XZ-Eus"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fHo-ya-N0t"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Q5Y-jf-2CH"/>
+                                <include reference="f4p-XZ-Eus"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Attachment" id="MTZ-OU-6km"/>
+                    <connections>
+                        <outlet property="fixedBallView" destination="fHo-ya-N0t" id="SLQ-5z-67p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXj-FD-eqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340" y="1107"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="6Ys-11-ExY">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="P13-vo-kvT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tKK-4l-caH">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="t3g-a8-mx7"/>
+                        <segue destination="iJH-yR-nOF" kind="relationship" relationship="viewControllers" id="aZK-EU-Bk8"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Seb-9u-zqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.5" y="782"/>
+        </scene>
+    </scenes>
+</document>
